@@ -336,11 +336,11 @@ void play()
             printf("0\n");
         }
         else if (winner == 0) {
-            player[1].cash -= bet_total;
+            player[1].cash -= bet[1];
             printf("%d\n", bet_total);
         }
         else if (winner == 1) {
-            player[1].cash += bet_total;
+            player[1].cash += bet[1];
             printf("%d\n", bet_total);
         }
 
