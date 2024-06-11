@@ -16,8 +16,8 @@ enum num { ace = 1, jack = 11, queen = 12, king = 13 };
 
 // 카드 구조체
 struct Card {
-    int number;
-    char shape;
+    int number; // 카드 숫자
+    char shape; // 카드 모양
 };
 
 // 모든 카드
@@ -26,11 +26,11 @@ int next;
 
 // 선수
 struct Player {
-    int cash;
-    int score;
-    int bust;
+    int cash;  // 소지금
+    int score; // 현재 점수
+    int bust; // 버스트 여부
     struct Card card_player[21];
-    int initial_cash;
+    int initial_cash; // 초기 소지금
 };
 
 struct Player player[2]; // 딜러와 플레이어 1만 사용
@@ -336,11 +336,11 @@ void play()
             printf("0\n");
         }
         else if (winner == 0) {
-            player[1].cash -= bet[1];
+            player[1].cash -= bet_total;
             printf("%d\n", bet_total);
         }
         else if (winner == 1) {
-            player[1].cash += bet[1];
+            player[1].cash += bet_total;
             printf("%d\n", bet_total);
         }
 
